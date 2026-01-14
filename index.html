@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <script>
+        function checkUser() {
+            var width = window.innerWidth;
+            var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+            
+            // Agar screen laptop ki hai ya user-agent mobile nahi hai
+            if (width > 768 || !isMobile) {
+                document.getElementById("laptop-content").style.display = "block";
+                document.getElementById("mobile-content").style.display = "none";
+            } else {
+                // Sirf asli mobile user ko landing page dikhao
+                document.getElementById("laptop-content").style.display = "none";
+                document.getElementById("mobile-content").style.display = "block";
+            }
+        }
+        window.onload = checkUser;
+    </script>
+    <style>
+        .hidden { display: none; }
+        body { font-family: sans-serif; margin: 0; padding: 0; }
+        .container { padding: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <div id="laptop-content" class="hidden">
+        <div class="container">
+            <h1>Khush Amdeed!</h1>
+            <p>Hamari maseed maloomat ke liye mobile app ka istemal karein.</p>
+            </div>
+    </div>
+
+    <div id="mobile-content" class="hidden">
+        <div class="container">
+            <h1>Special Offer Sirf Mobile Users ke Liye!</h1>
+            <p>Apna discount hasil karne ke liye niche button dabayein.</p>
+            <button style="padding: 15px; background: green; color: white; border: none;">Abhi Hasil Karein</button>
+        </div>
+    </div>
+
+</body>
+</html>
