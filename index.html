@@ -1,44 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="ur">
 <head>
-    <title>Welcome</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
     <script>
-        function checkUser() {
-            var width = window.innerWidth;
+        function checkDevice() {
             var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
             
-            // Agar screen laptop ki hai ya user-agent mobile nahi hai
-            if (width > 768 || !isMobile) {
-                document.getElementById("laptop-content").style.display = "block";
-                document.getElementById("mobile-content").style.display = "none";
+            if (!isMobile) {
+                // LAPTOP: Seedha Facebook par bhej do
+                window.location.replace("https://www.facebook.com"); 
             } else {
-                // Sirf asli mobile user ko landing page dikhao
-                document.getElementById("laptop-content").style.display = "none";
-                document.getElementById("mobile-content").style.display = "block";
+                // MOBILE: Yahan landing page dikhao
+                document.getElementById("mobile-view").style.display = "block";
             }
         }
-        window.onload = checkUser;
+        window.onload = checkDevice;
     </script>
     <style>
-        .hidden { display: none; }
-        body { font-family: sans-serif; margin: 0; padding: 0; }
-        .container { padding: 20px; text-align: center; }
+        body { margin: 0; font-family: sans-serif; background-color: #f0f2f5; }
+        #mobile-view { display: none; text-align: center; padding: 40px 20px; }
+        .card { background: white; padding: 30px; border-radius: 10px; shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .btn { padding: 15px 30px; background: #1877f2; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; width: 100%; }
     </style>
 </head>
 <body>
 
-    <div id="laptop-content" class="hidden">
-        <div class="container">
-            <h1>Khush Amdeed!</h1>
-            <p>Hamari maseed maloomat ke liye mobile app ka istemal karein.</p>
-            </div>
-    </div>
-
-    <div id="mobile-content" class="hidden">
-        <div class="container">
-            <h1>Special Offer Sirf Mobile Users ke Liye!</h1>
-            <p>Apna discount hasil karne ke liye niche button dabayein.</p>
-            <button style="padding: 15px; background: green; color: white; border: none;">Abhi Hasil Karein</button>
+    <div id="mobile-view">
+        <div class="card">
+            <h1>Special Mobile Offer!</h1>
+            <p>Sirf aaj ke liye hamari khas offer hasil karein.</p>
+            <br>
+            <button class="btn" onclick="location.href='https://rose-pigeon-t9wsnt.mystrikingly.com'">Abhi Click Karein</button>
         </div>
     </div>
 
